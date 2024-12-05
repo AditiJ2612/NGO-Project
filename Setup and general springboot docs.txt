@@ -1,0 +1,32 @@
+setup maven project: 
+VSCODE:
+1. Install extension java extension pack and Spring boot extension pack. 
+2. do cntrl+shift+p and type "Spring Initializr: Generate a Maven Project" : This will create a Maven project. 
+     (always have the package name starting from com. or org.
+3.  the pom.xml file will have all the dependencies for the project. 
+      eg: for web project you have to add the following in the <dependencies></dependencies> : This installs all web related thing. 
+      <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-web</artifactId>
+       </dependency>
+4. Also make sure you have the following which specifies a springboot as a parent dependency. 
+    <parent>
+          <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-parent</artifactId>
+           <version>3.4.0</version>
+           <relativePath/> <!-- lookup parent from repository -->
+     </parent>
+
+5. For running the application: Install Apache Maven and extract it and then choose a path till bin and add it to the env. variable then inside
+    your project where pom.xml file is there go to cmd and type "mvn clean install" and then run the application "mvn spring-boot:run"
+
+6. To know whether its correctly running or not, when you run the above run command you will see this: 
+2024-12-01 23:19:34.364  INFO 10140 --- [           main] c.s.i.course_api.CourseApiApplication    : Starting CourseApiApplication using Java 1.8.0_202 on DESKTOP-2M5L77L with PID 10140 (C:\Users\Admin\Desktop\SpringBoot\course-api\target\classes started by Admin in C:\Users\Admin\Desktop\SpringBoot\course-api)
+2024-12-01 23:19:34.372  INFO 10140 --- [           main] c.s.i.course_api.CourseApiApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-12-01 23:19:35.252  INFO 10140 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-12-01 23:19:35.260  INFO 10140 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-01 23:19:35.260  INFO 10140 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-12-01 23:19:35.372  INFO 10140 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-01 23:19:35.372  INFO 10140 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 952 ms
+2024-12-01 23:19:35.620  INFO 10140 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-12-01 23:19:35.628  INFO 10140 --- [           main] c.s.i.course_api.CourseApiApplication    : Started CourseApiApplication in 1.64 seconds (JVM running for 2.033)
